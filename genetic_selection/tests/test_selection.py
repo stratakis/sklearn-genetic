@@ -2,7 +2,7 @@ import random
 
 import numpy as np
 import pytest
-from sklearn import datasets, linear_model
+from sklearn import datasets, linear_model, multiclass
 from genetic_selection import GeneticSelectionCV
 
 
@@ -20,7 +20,7 @@ def test_genetic_selection(data):
     np.random.seed(42)
     X = data[0]
     y = data[1]
-    estimator = linear_model.LogisticRegression(solver="liblinear", multi_class="ovr")
+    estimator = multiclass.OneVsRestClassifier(linear_model.LogisticRegression(solver="liblinear"))
     selector = GeneticSelectionCV(
         estimator,
         cv=5,

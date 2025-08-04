@@ -39,5 +39,5 @@ setup(
     ],
     packages=find_packages(),
     python_requires=">=3.7",
-    install_requires=["scikit-learn>=1.0", "deap>=1.0.2", "numpy", "multiprocess"],
+    install_requires=["scikit-learn>=1.7", "deap>=1.0.2", "numpy", "multiprocess"],
 )
