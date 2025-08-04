@@ -27,11 +27,11 @@ from sklearn.base import is_classifier
 from sklearn.model_selection import check_cv, cross_val_score
 from sklearn.metrics import check_scoring
 from sklearn.feature_selection import SelectorMixin
-from sklearn.utils._joblib import cpu_count
 from deap import algorithms
 from deap import base
 from deap import creator
 from deap import tools
+from joblib import cpu_count
 
 
 creator.create("Fitness", base.Fitness, weights=(1.0, -1.0, -1.0))
